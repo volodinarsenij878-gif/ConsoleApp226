@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program67
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Систолическое давление: ");
+            if (int.TryParse(Console.ReadLine(), out int sbp) && sbp > 0)
+            {
+                string status;
+                if (sbp < 90) status = "Гипотония";
+                else if (sbp <= 120) status = "Норма";
+                else if (sbp <= 139) status = "Предгипертензия";
+                else status = "Гипертензия";
+
+                Console.WriteLine(status);
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: давление положительное.");
+            }
+        }
+    }
+}
